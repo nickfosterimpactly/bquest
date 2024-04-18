@@ -11,7 +11,6 @@ module.exports = async (req, res) => {
     };
 
     try {
-        // Constructing the URL to request specific fields using their Field IDs
         const fields = [
             'fldQmkNFcFXEYuYAU', // Field ID for "Size (kW) (Internal)"
             'fldVmbWULtw7wG5oM', // Field ID for "Size (kW) (Total)"
