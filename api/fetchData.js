@@ -1,5 +1,3 @@
-require('dotenv').config({ path: './BQuestAccessToken.env' });
-
 const axios = require('axios');
 
 module.exports = async (req, res) => {
@@ -24,7 +22,7 @@ module.exports = async (req, res) => {
         const response = await axios.get(url, config);
         res.status(200).json(response.data);
     } catch (error) {
-        console.error('Error fetching data from Airtable:', error);
-        res.status(500).json({ error: 'Failed to fetch data' });
+        console.error('Error fetching data from Airtable:', error.response || error.message);
+        res.status(500).json({ error: error.message || 'Failed to fetch data' });
     }
 };
